@@ -10,12 +10,12 @@ public class MallardDuckTest {
 
 	@Test
 	public void shouldQuack() {
-		assertThat("Quack", equalTo(duck.quack()));
+		assertThat("Quack", equalTo(duck.performQuack()));
 	}
 	
 	@Test
 	public void shouldFly() {
-		assertThat("Fly", equalTo(duck.fly()));
+		assertThat("Fly with wings", equalTo(duck.performFly()));
 	}
 	
 	@Test

@@ -1,18 +1,29 @@
 package com.patterns.chapter.one;
 
 public abstract class Duck {
-	
-	public String quack() {
-		return "Quack";
+
+	protected FlyBehavior flyBehavior;
+	protected QuackBehavior quackBehavior;
+
+	public void setFlyBehavior(FlyBehavior flyBehavior) {
+		this.flyBehavior = flyBehavior;
 	}
-	
-	public String fly() {
-		return "Fly";
+
+	public void setQuackBehavior(QuackBehavior quackBehavior) {
+		this.quackBehavior = quackBehavior;
 	}
-	
-	public abstract String display();
-	
+
+		public String performFly() {
+		return flyBehavior.fly();
+	}
+
+	public String performQuack() {
+		return quackBehavior.quack();
+	}
+
 	public String swim() {
 		return "All ducks float, even decoys";
 	}
+	
+	public abstract String display();
 }

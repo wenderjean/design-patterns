@@ -1,15 +1,10 @@
 package com.patterns.chapter.one;
 
 public class DecoyDuck extends Duck {
-
-	@Override
-	public String quack() {
-		return "Not Quack";
-	}
-
-	@Override
-	public String fly() {
-		return "Not Fly";
+	
+	public DecoyDuck() {
+		flyBehavior = new FlyNoWay();
+		quackBehavior = new MuteQuack();
 	}
 	
 	@Override

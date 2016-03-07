@@ -10,12 +10,12 @@ public class RubberDuckTest {
 
 	@Test
 	public void shouldQuack() {
-		assertThat("Squeak", equalTo(duck.quack()));
+		assertThat("Squeak", equalTo(duck.performQuack()));
 	}
 	
 	@Test
 	public void shouldNotFly() {
-		assertThat("Not Fly", equalTo(duck.fly()));
+		assertThat("Not Fly", equalTo(duck.performFly()));
 	}
 	
 	@Test

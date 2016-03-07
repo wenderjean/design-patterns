@@ -10,12 +10,12 @@ public class DecoyDuckTest {
 
 	@Test
 	public void shouldQuack() {
-		assertThat("Not Quack", equalTo(duck.quack()));
+		assertThat("Not Quack", equalTo(duck.performQuack()));
 	}
 	
 	@Test
 	public void shouldFly() {
-		assertThat("Not Fly", equalTo(duck.fly()));
+		assertThat("Not Fly", equalTo(duck.performFly()));
 	}
 	
 	@Test
