@@ -25,4 +25,8 @@ public class WeatherData implements Subject {
 	public void notifyObservers() {
 		observers.forEach((o) -> o.update(temperature, humidity, pressure));
 	}
+
+	public List<Observer> getObservers() {
+		return observers;
+	}
 }
