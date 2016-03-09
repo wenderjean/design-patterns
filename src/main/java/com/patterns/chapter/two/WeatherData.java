@@ -1,39 +1,30 @@
 package com.patterns.chapter.two;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Observable;
 
-public class WeatherData implements Subject {
+public class WeatherData extends Observable {
 
-	private List<Observer> observers;
 	private float temperature;
 	private float humidity;
 	private float pressure;
-
-	public WeatherData() {
-		observers = new ArrayList();
-	}
 	
 	public void setMeasurements(float temperature, float humidity, float pressure) {
 		this.temperature = temperature;
 		this.humidity = humidity;
 		this.pressure = pressure;
+		setChanged();
 		notifyObservers();
 	}
 
-	public void addObserver(Observer o) {
-		observers.add(o);
+	public float getTemperature() {
+		return temperature;
 	}
 
-	public void removeObserver(Observer o) {
-		observers.remove(o);
+	public float getHumidity() {
+		return humidity;
 	}
 
-	public void notifyObservers() {
-		observers.forEach((o) -> o.update(temperature, humidity, pressure));
-	}
-
-	public List<Observer> getObservers() {
-		return observers;
+	public float getPressure() {
+		return pressure;
 	}
 }
