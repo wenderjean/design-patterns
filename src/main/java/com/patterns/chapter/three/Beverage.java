@@ -2,11 +2,11 @@ package com.patterns.chapter.three;
 
 public abstract class Beverage {
 	
-	protected String description;
+	protected String description = "Unknown Beverage";
 	
 	public String getDescription() {
 		return description;
 	}
 	
-	public abstract float cost();
+	public abstract double cost();
 }

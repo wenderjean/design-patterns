@@ -2,8 +2,12 @@ package com.patterns.chapter.three;
 
 public class Decaf extends Beverage {
 
+	public Decaf() {
+		description = "Decaffeinated Coffee";
+	}
+	
 	@Override
-	public float cost() {
-		return 0;
+	public double cost() {
+		return 1.05;
 	}
 }
