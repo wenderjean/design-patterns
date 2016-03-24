@@ -1,25 +1,19 @@
 package com.patterns.chapter.four;
 
-public class PepperoniPizza implements Pizza {
+public class PepperoniPizza extends Pizza {
 
-	@Override
-	public void prepare() {
-		// TODO Auto-generated method stub
-	}
+	private PizzaIngredientFactory pizzaIngredientFactory;
 
-	@Override
-	public void bake() {
-		// TODO Auto-generated method stub
-	}
-
-	@Override
-	public void cut() {
-		// TODO Auto-generated method stub
-	}
-
-	@Override
-	public void box() {
-		// TODO Auto-generated method stub
+	public PepperoniPizza(PizzaIngredientFactory pizzaIngredientFactory) {
+		this.pizzaIngredientFactory = pizzaIngredientFactory;
 	}
 	
+	@Override
+	public void prepare() {
+		System.out.println("Preparing " + name);
+		dough = pizzaIngredientFactory.createDough();
+		sauce = pizzaIngredientFactory.createSauce();
+		cheese = pizzaIngredientFactory.createCheese();
+		clam = pizzaIngredientFactory.createClam();
+	}
 }

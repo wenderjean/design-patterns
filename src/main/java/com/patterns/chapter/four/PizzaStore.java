@@ -1,16 +1,9 @@
 package com.patterns.chapter.four;
 
-public class PizzaStore {
+public abstract class PizzaStore {
 	
-	private SimplePizzaFactory factory;
-
-	public PizzaStore(SimplePizzaFactory factory) {
-		super();
-		this.factory = factory;
-	}
-	
-	public Pizza order(String type) {
-		Pizza pizza = this.factory.create(type);
+	public final Pizza order(PizzaType type) {
+		Pizza pizza = create(type);
 		pizza.prepare();
 		pizza.bake();
 		pizza.cut();
@@ -18,4 +11,5 @@ public class PizzaStore {
 		return pizza;
 	}
 
+	public abstract Pizza create(PizzaType type);
 }

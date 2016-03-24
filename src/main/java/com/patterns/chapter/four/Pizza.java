@@ -1,13 +1,34 @@
 package com.patterns.chapter.four;
 
-public interface Pizza {
-
-	public void prepare();
+public abstract class Pizza {
 	
-	public void bake();
+	protected String name;
+	protected Dough dough;
+	protected Sauce sauce;
+	protected Veggies[] veggies;
+	protected Cheese cheese;
+	protected Pepperoni pepperoni;
+	protected Clam clam;
 	
-	public void cut();
+	public abstract void prepare();
 	
-	public void box();
+	public void bake() {
+		System.out.println("Bake for 25 minutes at 350");
+	}
 	
+	public void cut() {
+		System.out.println("Cutting the pizza into diagonal slices");
+	}
+	
+	public void box() {
+		System.out.println("Place pizza in official box");
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
 }
